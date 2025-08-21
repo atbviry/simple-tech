@@ -1,1 +1,60 @@
-<app-search-bar></app-search-bar>
+<!-- <app-search-bar (searchButtonClicked)="increaseCount()"></app-search-bar>
+click count : {{count}} -->
+
+<!-- <div id="search-bar-container">
+	<app-search-bar (searchButtonClicked)="increaseCount()"
+	[search]="search"
+	(searchChange)="search = $event" -->
+<!-- /> -->
+<!-- </app-search-bar> -->
+<!-- un br pour que les choses s'affichent l'un au dessous de l'autre -->
+<!-- Search: {{search}} <br />
+	click count : {{count}}
+</div> -->
+
+<!-- <div id="search-bar-container">
+	<app-search-bar (searchButtonClicked)="increaseCount()"
+	[(search)]="search"
+	/> -->
+<!-- </app-search-bar> -->
+<!-- un br pour que les choses s'affichent l'un au dessous de l'autre -->
+<!-- Search: {{search}} <br />
+	click count : {{count}}
+</div> -->
+
+<!-- <div id="search-bar-container">
+	<app-search-bar (submit)="increaseCount()"
+	[(search)]="search"
+	/> -->
+<!-- </app-search-bar> -->
+<!-- un br pour que les choses s'affichent l'un au dessous de l'autre -->
+<!-- Search: {{search}} <br />
+	click count : {{count}}
+</div> -->
+
+
+<!-- nouvelle version de output -->
+<!-- <div id="search-bar-container">
+	<app-search-bar (searchButtonClicked)="increaseCount()"
+	[(search)]="search"
+	/> -->
+<!-- </app-search-bar> -->
+<!-- un br pour que les choses s'affichent l'un au dessous de l'autre -->
+<!-- Search: {{search}} <br />
+	click count : {{count}}
+</div> -->
+
+
+<!-- nouvelle version de output, avec alias -->
+<!-- <div id="search-bar-container">
+	<app-search-bar (submit)="increaseCount()"
+	[(search)]="search"
+	/>
+	Search: {{search}} <br />
+	click count : {{count}}
+</div>
+ -->
+<button (click)="toggleMonster()">Toggle Monster</button>
+<div id="card-list">
+	<app-playing-card [monster]="monsters[selectedMonsterIndex]"></app-playing-card>
+</div>
