@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, computed, effect, Input, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PlayingCardComponent } from './composants/playing-card/playing-card.component';
 import { Monster } from './models/monster';
@@ -21,9 +21,19 @@ export class AppComponent{
   count: number = 0;//il est à zéro à defaut de clique sur le bouton de recherhce
   search: string = '';
 
-  selectedMonsterIndex = 0; //la position de l'élément qu'on doit afficher 
+  selectedMonsterIndex = signal(0); //la position de l'élément qu'on doit afficher 
+
+  selectedMonster = computed(() => {
+    return this.monsters[this.selectedMonsterIndex()];
+  });
 
   constructor() {
+    
+    effect(() =>{
+      console.log(this.selectedMonster());
+    }
+
+    )
     this.monsters = [];
 
    const monster1 = new Monster();
@@ -37,9 +47,18 @@ export class AppComponent{
     monster2.image = "assets/img/pokemon.png";
     monster2.type = MonsterType.WATER;
     monster2.hp = 60;
-     monster2.figureCaption= "N° 003 Water";
+     monster2.figureCaption= "N° 001 Water";
     monster2.attackDescription = "This is a long description of a monster capacity.";
-    this.monsters.push(monster1, monster2);
+
+    const monster3 = new Monster();
+    monster3.name = "CAR";
+    monster3.image = "assets/img/pikachou.png";
+    monster3.type = MonsterType.WATER;
+    monster3.hp = 45;
+     monster3.figureCaption= "N° 002 Water";
+    monster3.attackDescription = "This is a long description of a monster capacity.";
+
+    this.monsters.push(monster1, monster2, monster3);
 
   }
   
@@ -67,6 +86,6 @@ export class AppComponent{
 
   toggleMonster() {
     //debugger;
-    this.selectedMonsterIndex = (this.selectedMonsterIndex + 1)% this.monsters.length;
+    this.selectedMonsterIndex.set((this.selectedMonsterIndex() + 1)% this.monsters.length);
   }
 }

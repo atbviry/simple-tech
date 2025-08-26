@@ -54,7 +54,13 @@ click count : {{count}} -->
 	click count : {{count}}
 </div>
  -->
+<!-- <button (click)="toggleMonster()">Toggle Monster</button>
+<div id="card-list">
+	<app-playing-card [monster]="monsters[selectedMonsterIndex()]"></app-playing-card>
+</div> -->
+
+
 <button (click)="toggleMonster()">Toggle Monster</button>
 <div id="card-list">
-	<app-playing-card [monster]="monsters[selectedMonsterIndex]"></app-playing-card>
+	<app-playing-card [monster]="selectedMonster()"></app-playing-card>
 </div>
