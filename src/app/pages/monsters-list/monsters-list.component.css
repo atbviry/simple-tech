@@ -1,0 +1,19 @@
+body, html {
+	font-family: Roboto, sans-serif;
+	height: 100%;
+	background: linear-gradient(45deg, rgb(252, 228, 252), rgb(218, 228, 255));
+}
+
+#card-list {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+ }
+
+.center {
+	margin-top: 40px;
+	text-align: center;
+	color:blue;
+}

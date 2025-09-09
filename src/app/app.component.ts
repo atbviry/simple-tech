@@ -10,49 +10,10 @@ import { MonsterService } from './services/monster/monster.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PlayingCardComponent, SearchBarComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent{
 
-  //monsters!: Monster[];
-    monsters = signal<Monster[]>([]);
-  
-  monsterSerivce = inject(MonsterService);
-
-  //je vais créer un attribut/un model input search qui va contenir le texte à rechercher.
-  search = model('');
-  //mainetanant qu'on a notre search, on va créer  signal computed  qui va contenir la liste des montres filtrer
- 
-  // filterMonsters = computed(() => {
-  //   return this.monsters.filter(monster => monster.name.includes(this.search()));
-  // }
-  // )
-  
-  // constructor() {
-  //   this.monsters = this.monsterSerivce.getAll();
-  // }
-  
-  // addMonster() {
-  //   const genericMonster = new Monster();
-  //   this.monsterSerivce.add(genericMonster);
-  //   this.monsters = this.monsterSerivce.getAll();
-  // }
-
-  //version 2
-   filterMonsters = computed(() => {
-    return this.monsters().filter(monster => monster.name.includes(this.search()));
-  }
-  )
-  
-  constructor() {
-    this.monsters.set(this.monsterSerivce.getAll());
-  }
-  
-  addMonster() {
-    const genericMonster = new Monster();
-    this.monsterSerivce.add(genericMonster);
-   this.monsters.set(this.monsterSerivce.getAll());
-  }
 }
