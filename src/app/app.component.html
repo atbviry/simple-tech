@@ -1,4 +1,3 @@
-
 <!-- <div id="card-list">
 <app-playing-card *ngFor="let monster of monsters" [monster]="monster"></app-playing-card>
 </div> -->
@@ -17,7 +16,7 @@
   <div class="center">Found {{filterMonsters().length}} Monsters </div>
 </ng-template> -->
 <!-- methode amelioree 2 -->
- 
+
 <!-- <div class="center" *ngIf="filterMonsters().length == 0"; then notFoundMonsters else foundMonsters>No Found Monsters !</div>
 <ng-template #notFoundMonsters>
 	<div class="center">No Found Monsters !</div>
@@ -44,12 +43,14 @@
 <app-search-bar [(search)]="search"></app-search-bar>
 <div id="card-list">
   @for (monster of filterMonsters(); track monster) {
-    <app-playing-card [monster]="monster"></app-playing-card>
+  <app-playing-card [monster]="monster"></app-playing-card>
   }@empty {
-     <div class="center">No Found Monsters !</div>
+  <div class="center">No Found Monsters !</div>
   }
 </div>
 @if (filterMonsters().length > 0) {
-  <div class="center">Found {{filterMonsters().length}} Monsters</div>
+<div class="center">Found {{filterMonsters().length}} Monsters</div>
 }
-
+<div class="center">
+  <button (click)="addMonster()"> Add Generic Monster</button>
+</div><br /><br />
