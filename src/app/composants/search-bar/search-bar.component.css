@@ -1,0 +1,41 @@
+
+#search-bar {
+    display: flex;
+    background-color: white;
+    border-radius: 40px;
+    margin: 50px auto;
+    width: 400px;
+    box-shadow: 3px 3px 10px -3px grey;
+    overflow: hidden;
+}
+/* Ensuite mon input */
+input {
+    all: unset;
+    flex-grow: 1;
+    padding: 10px 20px;
+}
+
+/* ensuite mon bouton */
+button {
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 40px;
+    background-color: rgb(205, 205, 255);
+    width: 30px;
+    cursor: pointer;
+}
+
+/* sur mon image qui se trouve à l'interieur du bouton */
+button img {
+    max-width: 18px;
+    max-height: 18px;
+}
+
+/* 
+Pour finir sur notre bouton on va lui mettre un effet hover pour que quand t'on passe
+la souri on va changer legerement la couleur . Et ça sera un rgb 179, 179 et 255
+ */
+button:hover {
+    background-color: rgb(179, 179, 255);
+}

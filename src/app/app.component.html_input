@@ -1,0 +1,17 @@
+<div id="card-list">
+    <!-- premiere carte -->
+    <!-- <app-playing-card></app-playing-card> -->
+        <!-- deuxieme carte -->
+    <!-- <app-playing-card ></app-playing-card> -->
+<!-- version input sans model -->
+    <!-- <app-playing-card name="BAH" [hp]="54 +32"></app-playing-card> -->
+    <!-- <app-playing-card ></app-playing-card> -->
+
+    <!-- utilisation des input avec model methode decorateur @input et signal input -->
+    <app-playing-card [my-monster]="monster1"></app-playing-card>
+    <app-playing-card [my-monster]="monster1"></app-playing-card>
+    
+    <!-- <router-outlet /> -->
+</div>
+
+

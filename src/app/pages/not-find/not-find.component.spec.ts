@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlayingCardComponent } from './playing-card.component';
+import { NotFindComponent } from './not-find.component';
 
-describe('PlayingCardComponent', () => {
-  let component: PlayingCardComponent;
-  let fixture: ComponentFixture<PlayingCardComponent>;
+describe('NotFindComponent', () => {
+  let component: NotFindComponent;
+  let fixture: ComponentFixture<NotFindComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlayingCardComponent]
+      imports: [NotFindComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PlayingCardComponent);
+    fixture = TestBed.createComponent(NotFindComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,4 +20,4 @@ describe('PlayingCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});          
+});

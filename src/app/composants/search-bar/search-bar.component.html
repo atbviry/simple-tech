@@ -1,0 +1,30 @@
+<!-- evénement simple qui ne renvoye aucune valeur -->
+<!-- <div id="search-bar">
+    <input type="text" placeholder="Search.....">
+    <button (click)="searchClick()">
+        <img src="assets/img/search.png">
+    </button>
+</div> -->
+
+<!--événement qui renvoye la valeur entrée dans la barre de recherche -->
+<!-- <div id="search-bar">
+    <input type="text" placeholder="Search....." [ngModel]="search" (ngModelChange)="updateSearch($event)">
+    <button (click)="searchClick()">
+        <img src="assets/img/search.png">
+    </button>
+</div> -->
+
+<!-- nouvelle version d'angular 17.3-->
+<!-- <div id="search-bar">
+    <input type="text" placeholder="Search....." [ngModel]="search()" (ngModelChange)="updateSearch($event)">
+    <button (click)="searchClick()">
+        <img src="assets/img/search.png">
+    </button>
+</div> -->
+<!-- encore mieux -->
+<div id="search-bar">
+    <input type="text" placeholder="Search....." [(ngModel)]="search">
+    <button (click)="searchClick()">
+        <img src="assets/img/search.png">
+    </button>
+</div>

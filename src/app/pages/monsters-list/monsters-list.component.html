@@ -1,0 +1,56 @@
+<!-- <div id="card-list">
+<app-playing-card *ngFor="let monster of monsters" [monster]="monster"></app-playing-card>
+</div> -->
+
+<!-- <app-search-bar [(search)]="search"></app-search-bar> -->
+
+<!-- <div id="card-list">
+    <app-playing-card *ngFor="let monster of filterMonsters()" [monster]="monster"></app-playing-card>
+</div> -->
+
+<!-- <div id="notFoundMonsters" class="center" *ngIf="filterMonsters().length == 0">No Found Monsters !</div>
+<div id="foundMonsters" class="center" *ngIf="filterMonsters().length > 0">Found {{filterMonsters().length}} Monsters </div> -->
+<!-- methode amelioree 1: ng-template-->
+<!-- <div id="notFoundMonsters" class="center" *ngIf="filterMonsters().length == 0"; else foundMonsters>No Found Monsters !</div>
+<ng-template #foundMonsters>
+  <div class="center">Found {{filterMonsters().length}} Monsters </div>
+</ng-template> -->
+<!-- methode amelioree 2 -->
+
+<!-- <div class="center" *ngIf="filterMonsters().length == 0"; then notFoundMonsters else foundMonsters>No Found Monsters !</div>
+<ng-template #notFoundMonsters>
+	<div class="center">No Found Monsters !</div>
+</ng-template>
+<ng-template #foundMonsters>
+	<div class="center">Found {{filterMonsters().length}} Monsters</div>
+</ng-template> -->
+
+<!-- l'etat final optimisé -->
+
+<!-- <app-search-bar [(search)]="search"></app-search-bar>
+<div id="card-list">
+  @for (monster of filterMonsters(); track monster) {
+    <app-playing-card [monster]="monster"></app-playing-card>
+  }
+</div>
+
+@if (filterMonsters().length == 0) {
+  <div class="center">No Found Monsters !</div>
+}@else {
+	<div class="center">Found {{filterMonsters().length}} Monsters</div>
+} -->
+
+<app-search-bar [(search)]="search"></app-search-bar>
+<div id="card-list">
+  @for (monster of filterMonsters(); track monster) {
+  <app-playing-card [monster]="monster"></app-playing-card>
+  }@empty {
+  <div class="center">No Found Monsters !</div>
+  }
+</div>
+@if (filterMonsters().length > 0) {
+<div class="center">Found {{filterMonsters().length}} Monsters</div>
+}
+<div class="center">
+  <button (click)="addMonster()"> Add Generic Monster</button>
+</div><br /><br />

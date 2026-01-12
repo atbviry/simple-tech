@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlayingCardComponent } from './playing-card.component';
+import { MonsterComponent } from './monster.component';
 
-describe('PlayingCardComponent', () => {
-  let component: PlayingCardComponent;
-  let fixture: ComponentFixture<PlayingCardComponent>;
+describe('MonsterComponent', () => {
+  let component: MonsterComponent;
+  let fixture: ComponentFixture<MonsterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlayingCardComponent]
+      imports: [MonsterComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PlayingCardComponent);
+    fixture = TestBed.createComponent(MonsterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,4 +20,4 @@ describe('PlayingCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});          
+});
